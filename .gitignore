@@ -1,0 +1,5 @@
+db_data/
+
+hello-world-app/Cargo.lock
+
+hello-world-app/target/
