@@ -25,7 +25,6 @@ FROM debian:bookworm-slim
 # Copier le binaire compilé depuis l'étape de construction
 COPY --from=builder /app/target/release/nlpf-StockExchange /usr/local/bin/nlpf-StockExchange
 
-# Exposer le port sur lequel l'application écoute
 EXPOSE 5151
 
 # Démarrer l'application

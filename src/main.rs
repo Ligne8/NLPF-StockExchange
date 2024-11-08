@@ -31,7 +31,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(db_data.clone())
             .configure(routes::init)
     })
-    .bind("127.0.0.1:5151")?
+    .bind("0.0.0.0:5151")?
     .run()
     .await
 }
