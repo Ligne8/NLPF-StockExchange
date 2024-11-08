@@ -8,7 +8,8 @@ mod routes;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let client_options = ClientOptions::parse("mongodb://ligne8:ligne8password@mongo:27017/")
+    let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL doit être défini");
+    let client_options = ClientOptions::parse(&database_url)
         .await
         .expect("Erreur lors de l'analyse de l'URI MongoDB");
     let client = Client::with_options(client_options).expect("Erreur lors de la création du client MongoDB");
